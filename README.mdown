@@ -1,0 +1,17 @@
+# NSThread+MCSMAdditions
+
+*NSThread+MCSMAdditions* is a category on *NSThread* that adds Block based APIs.
+
+## Example
+
+To perform a block of code on a background thread you can use the ` MCSM_performBlockInBackground: ` method.
+
+	[NSThread MCSM_performBlockInBackground:^{
+		[object doSomething];
+	}];
+
+## Additional Information 
+
+For more information please visit
+http://objcolumnist.com/2011/05/03/performing-a-block-of-code-on-a-given-thread/
+
