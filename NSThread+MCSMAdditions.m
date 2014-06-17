@@ -15,7 +15,7 @@
 
 + (void)MCSM_performBlockInBackground:(void (^)())block{
 	[NSThread performSelectorInBackground:@selector(MCSM_runBlock:)
-                               withObject:[[block copy] autorelease]];
+                               withObject:[block copy]];
 }
 
 + (void)MCSM_runBlock:(void (^)())block{
@@ -34,14 +34,14 @@
     
 	[NSThread performSelector:@selector(MCSM_runBlock:)
 					 onThread:self
-				   withObject:[[block copy] autorelease]
+				   withObject:[block copy]
 				waitUntilDone:wait];
 }
 
 - (void)MCSM_performBlock:(void (^)())block afterDelay:(NSTimeInterval)delay{
     
 	[self performSelector:@selector(MCSM_performBlock:) 
-			   withObject:[[block copy] autorelease] 
+			   withObject:[block copy]
                afterDelay:delay];
 }
 
